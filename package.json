@@ -1,0 +1,36 @@
+{
+  "name": "jcr-oak-api",
+  "version": "0.0.0",
+  "main": "lib/jcr-oak-rpc-api-nodejs.js",
+  "description": "Api for accessing Jacrabbit oak repository through nodejs",
+  "homepage": "www.jumlabs.com",
+  "bugs": "https://github.com/ottogiron/jcr-oak-rpc-api-nodejs/issues",
+  "author": {
+    "name": "Otto Giron (JumLabs)",
+    "email": "ottog2486@gmail.com",
+    "url": "www.jumlabs.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ottogiron/jcr-oak-rpc-api-nodejs"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "thrift": "~0.9.1"
+  }
+}
