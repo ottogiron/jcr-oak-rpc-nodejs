@@ -31,6 +31,6 @@
     "test": "grunt"
   },
   "dependencies": {
-    "thrift": "~0.9.1"
+    "thrift": "git+https://github.com/apache/thrift.git"
   }
 }
