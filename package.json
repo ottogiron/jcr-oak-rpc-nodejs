@@ -1,7 +1,7 @@
 {
   "name": "jcr-oak-api",
   "version": "0.0.0",
-  "main": "./lib/jcr-oap-api",
+  "main": "./lib/jcr-oak-api.js",
   "description": "Api for accessing Jacrabbit oak repository through nodejs",
   "homepage": "www.jumlabs.com",
   "bugs": "https://github.com/ottogiron/jcr-oak-rpc-api-nodejs/issues",
