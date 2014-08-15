@@ -1,10 +1,7 @@
 'use strict';
 
-var jcrOakRpcApiNodejs = require('../lib/jcr-oak-rpc-api-nodejs.js'),
-        thrift = require('thrift'),        
-        TRoot = require('../lib/TRootService'),        
-        treetypes = require('../lib/tree_types');
-
+var jcrOakAPI = require('../lib/jcr-oak-api.js');
+        
 
 /*
  ======== A Handy Little Nodeunit Reference ========
@@ -33,9 +30,12 @@ exports.jcrOakRpcApiNodejs = {
     },
     testJcrOakClient: function(test) {
 
-        var connection = thrift.createConnection('localhost', 9090, {transport: thrift.TFramedTransport}),
-        multiplexer = new  thrift.Multiplexer(),
-        root =  multiplexer.createClient('TRootService',TRoot,connection);        
+        var connection = jcrOakAPI.getConnection({
+            host: 'localhost',
+            port: 9090
+        });
+        
+        var root =  jcrOakAPI.getTRootService(connection);        
         
         connection.on('error', function(err) {
             console.error(err);
