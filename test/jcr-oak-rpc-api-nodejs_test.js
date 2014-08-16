@@ -28,7 +28,7 @@ exports.jcrOakRpcApiNodejs = {
         // setup here
         done();
     },
-    testJcrOakClient: function(test) {
+    testRootGetTree: function(test) {
 
         var connection = jcrOakAPI.getConnection({
             host: 'localhost',
@@ -55,5 +55,28 @@ exports.jcrOakRpcApiNodejs = {
             test.done();
         });
 
+    },
+    testTreeGetChildren: function(test){
+        var connection = jcrOakAPI.getConnection({
+            host: 'localhost',
+            port: 9090
+        });
+        
+        var rootService =  jcrOakAPI.getTRootService(connection);  
+        var treeService = jcrOakAPI.getTTreeService(connection);
+        
+        connection.on('error', function(err) {
+            console.error(err);
+            test.done();
+        });
+        
+        rootService.getTree('/', function(error,tree){
+            treeService.getChildren(tree,function(err,children){
+                test.ok(children);
+               // console.log(children);
+                test.done();
+            });            
+        });
+        
     }
 };
