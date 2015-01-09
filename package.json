@@ -31,6 +31,6 @@
     "test": "grunt"
   },
   "dependencies": {
-    
+    "thrift": "git+https://github.com/ottogiron/thrift-node-master-tmp.git"
   }
 }
