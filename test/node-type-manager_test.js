@@ -50,7 +50,7 @@ exports.jcrOakRpcApiNodejs = {
     testGetNodeType: function(test){
       var connection = getConnection();
       var nodeTypeManager = jcrOakAPI.getTNodeTypeManager(connection);
-      nodeTypeManager.getNodeType('nt:file',function(err,nodeType){        
+      nodeTypeManager.getNodeType('nt:file',function(err,nodeType){
         test.equal(nodeType.name,'nt:file');
         test.done();
       });
